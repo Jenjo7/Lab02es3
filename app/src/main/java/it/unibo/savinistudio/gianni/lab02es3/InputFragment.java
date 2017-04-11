@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.ContentFrameLayout;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +79,14 @@ public class InputFragment extends Fragment {
 
         return view;
     }
-
+    /**
+     * Metodo del ciclo di vita del fragment che viene richiamato quando lo stesso viene "collegato" ad un'activity.
+     * Il parametro context è appunto il riferimento all'activity appena citata. Tramite la parola chiave "instanceof" si verifica che
+     * l'activity implementi l'interfaccia definita dal fragment; se risulta essere così, viene salvato il riferimento all'activity in modo
+     * da poter richiamare i metodi dell'interfaccia che l'activity ha implementato.
+     *
+     * @param context
+     */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -87,7 +94,9 @@ public class InputFragment extends Fragment {
             listener = (OnInputInteraction) context;
         }
     }
-
+    /**
+     * Quando il fragment viene distrutto, viene eliminato il collegamento con l'activity.
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();
