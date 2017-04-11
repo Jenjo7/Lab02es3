@@ -1,6 +1,17 @@
 package it.unibo.savinistudio.gianni.lab02es3;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.ContentFrameLayout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
 
 /**
  * Created by gianni on 11/04/17.
@@ -38,7 +49,49 @@ public class InputFragment extends Fragment {
 
     }
 
+    private EditText edtName;
+    private EditText edtSurname;
+    private RadioButton rdbTri;
+    private RadioButton rdbMas;
+    private CheckBox chkNews;
+    private Button btnNews;
 
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.input_fragment, container, false);
+        edtName = (EditText) view.findViewById(R.id.edt_name);
+        edtSurname = (EditText) view.findViewById(R.id.edt_surname);
+        rdbTri = (RadioButton) view.findViewById(R.id.rdb_tri);
+        rdbMas = (RadioButton) view.findViewById(R.id.rdb_mas);
+        chkNews = (CheckBox) view.findViewById(R.id.chb_newsletter);
+        btnNews = (Button) view.findViewById(R.id.btn_insert);
+        // Creazione di un listener per intercettare il click sul bottone da parte dell'utente
+        btnNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(listener != null) {
+                    //Passo gli argomenti da intercettare, al metodo OnButtonClick dell'interfaccia OnInputInteraction
+                    listener.onButtonClick(edtName.toString(), edtSurname.toString(), rdbTri.isChecked(), chkNews.isChecked());
+                }
+            }
+        });
 
+        return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof OnInputInteraction) {
+            listener = (OnInputInteraction) context;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        listener = null;
+    }
 
 }
