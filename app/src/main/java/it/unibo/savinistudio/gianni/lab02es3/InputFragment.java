@@ -72,7 +72,7 @@ public class InputFragment extends Fragment {
             public void onClick(View view) {
                 if(listener != null) {
                     //Passo gli argomenti da intercettare, al metodo OnButtonClick dell'interfaccia OnInputInteraction
-                    listener.onButtonClick(edtName.toString(), edtSurname.toString(), rdbTri.isChecked(), chkNews.isChecked());
+                    listener.onButtonClick(edtName.getText().toString(), edtSurname.getText().toString(), rdbTri.isChecked(), chkNews.isChecked());
                 }
             }
         });
