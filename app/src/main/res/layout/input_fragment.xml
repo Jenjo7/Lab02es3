@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
+    <EditText
         android:id="@+id/edt_name"
         android:hint="@string/inserisci_nome"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
 
 
 
-    <TextView
+    <EditText
         android:id="@+id/edt_surname"
         android:hint="@string/inserisci_cognome"
         android:layout_width="wrap_content"
