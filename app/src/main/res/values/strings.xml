@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Lab02es3</string>
+    <string name="inserisci_nome">Inserisci Nome</string>
+    <string name="inserisci_cognome">Inserisci Cognome</string>
+    <string name="corso_triennale">Corso Triennale</string>
+    <string name="corso_magistrale">Corso Magistrale</string>
+    <string name="ckb_news">Iscriviti alla newsletter</string>
+    <string name="iscriviti">Iscriviti</string>
 </resources>

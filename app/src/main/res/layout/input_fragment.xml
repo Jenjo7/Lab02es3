@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/edt_name"
+        android:hint="@string/inserisci_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:inputType="textPersonName"/>
+
+
+
+    <TextView
+        android:id="@+id/edt_surname"
+        android:hint="@string/inserisci_cognome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:inputType="textPersonName"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:weightSum="2">
+
+        <RadioButton
+            android:id="@+id/rdb_tri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/corso_triennale"/>
+
+        <RadioButton
+            android:id="@+id/rdb_mas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/corso_magistrale"/>
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/chb_newsletter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/ckb_news"/>
+
+    <Button
+        android:id="@+id/btn_insert"
+        android:text="@string/iscriviti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+
+</LinearLayout>
